@@ -1,11 +1,14 @@
 plugins {
     id 'com.android.application'
+
 }
 
 android {
     namespace 'com.example.myapplication'
     compileSdk 33
-
+    buildFeatures {
+        buildConfig = true
+    }
     defaultConfig {
         applicationId "com.example.myapplication"
         minSdk 26
@@ -14,6 +17,13 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+    }
+    flavorDimensions "default"
+    productFlavors{
+        prod{
+            buildConfigField "String", "username", "\"scosta\""
+            buildConfigField "String", "password", "\"BKWb2022!\""
+        }
     }
 
     buildTypes {

@@ -1,7 +1,8 @@
 package com.example.myapplication;
-
 import android.content.Context;
+import android.content.res.AssetManager;
 import android.content.res.Configuration;
+import android.content.res.Resources;
 import android.graphics.Typeface;
 import android.os.AsyncTask;
 import android.os.Bundle;
@@ -25,8 +26,10 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.myapplication.databinding.FragmentFirstBinding;
 
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.lang.reflect.Array;
 import java.net.URL;
 import java.net.URLConnection;
@@ -62,9 +65,10 @@ public class FirstFragment extends Fragment {
         binding.buttonFirst.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
+
                 String fileURL = "https://webdav.bkwb.org/Groups/IT-Support/scosta/Inventar IT Büro/Inventar 212.accdb";
-                String username = "scosta";
-                String password = "BKWb2022!";
+                String username = BuildConfig.username;
+                String password = BuildConfig.password;
                 String tableName = "Tabelle1";
 
                 new FetchInputStreamTask(fileURL, username, password, tableName).execute();
