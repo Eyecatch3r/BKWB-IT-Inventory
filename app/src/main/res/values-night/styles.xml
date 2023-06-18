@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:tools="http://schemas.android.com/tools">
+    <!-- Base application theme for dark mode -->
+    <style name="AppTheme" parent="Theme.MaterialComponents.NoActionBar">
+        <!-- Customize your dark mode attributes here -->
+        <item name="colorPrimary">@color/colorPrimaryDark</item>
+        <item name="colorPrimaryDark">@color/colorPrimary</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColor">@color/text_color_dark</item>
+        <!-- Add more attributes as needed -->
+    </style>
+
+    <color name="colorPrimaryDark" tools:ignore="MissingDefaultResource">#F8F7F7</color>
+    <color name="colorPrimary" tools:ignore="MissingDefaultResource">#000000</color>
+    <color name="colorAccent" tools:ignore="MissingDefaultResource">#4B4646</color>
+    <color name="text_color_dark" tools:ignore="MissingDefaultResource">#FFFFFF</color>
+
+</resources>
