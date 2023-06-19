@@ -21,8 +21,8 @@ android {
     flavorDimensions "default"
     productFlavors{
         prod{
-            buildConfigField "String", "username", "\"scosta\""
-            buildConfigField "String", "password", "\"BKWb2022!\""
+            buildConfigField "String", "username", "\"it\""
+            buildConfigField "String", "password", "\"ITbkwb1902\""
         }
     }
 

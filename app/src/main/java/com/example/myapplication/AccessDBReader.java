@@ -59,7 +59,7 @@ public class AccessDBReader extends AsyncTask<Void, Void, List<String>> {
                 // Get the value of the specified column in the row and add it to the data list
                 String inventarNr = row.getString("Inventar Nr");
                 String beschreibung = row.getString("Beschreibung");
-                Double regalFachNr = row.getDouble("Regal Fach Nr");
+                Integer regalFachNr = row.getInt("Regal Fach Nr");
                 String kistenBoxNr = row.getString("Kisten oder Box Nr");
                 String schrankNr = row.getString("Schrank Nr");
                 Double stkZahl = row.getDouble("STK Zahl");

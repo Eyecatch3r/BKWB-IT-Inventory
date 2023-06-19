@@ -1,12 +1,16 @@
 package com.example.myapplication;
 
+import android.content.Context;
+import android.content.DialogInterface;
 import android.content.Intent;
 import android.net.Uri;
 import android.os.Bundle;
-import com.google.android.material.snackbar.Snackbar;
+
+import androidx.appcompat.app.AlertDialog;
 import androidx.appcompat.app.AppCompatActivity;
+
 import android.view.View;
-import androidx.core.view.WindowCompat;
+
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
 import androidx.navigation.ui.AppBarConfiguration;
@@ -22,6 +26,16 @@ public class MainActivity extends AppCompatActivity {
     private AppBarConfiguration appBarConfiguration;
 private ActivityMainBinding binding;
 
+    private boolean isSimplifiedTable = false;
+
+
+    public boolean isSimplifiedTable() {
+        return isSimplifiedTable;
+    }
+
+    public void setSimplifiedTable(boolean tableName) {
+        this.isSimplifiedTable = tableName;
+    }
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -62,6 +76,7 @@ private ActivityMainBinding binding;
 
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
+            showSettingsDialog(MainActivity.this);
             return true;
         }
 
@@ -74,4 +89,29 @@ private ActivityMainBinding binding;
         return NavigationUI.navigateUp(navController, appBarConfiguration)
                 || super.onSupportNavigateUp();
     }
+
+    private void showSettingsDialog(Context context) {
+        AlertDialog.Builder builder = new AlertDialog.Builder(context);
+        builder.setTitle("Tabellendarstellung");
+
+
+        // Add "Simplified View" button
+        builder.setPositiveButton("Simplified View", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                isSimplifiedTable = true; // Update the tableName for the simplified view
+            }
+        });
+
+        // Add "Extensive View" button
+        builder.setNegativeButton("Normal", new DialogInterface.OnClickListener() {
+            @Override
+            public void onClick(DialogInterface dialogInterface, int i) {
+                isSimplifiedTable = false; // Update the tableName for the extensive view
+            }
+        });
+
+        builder.show();
+    }
+
 }
