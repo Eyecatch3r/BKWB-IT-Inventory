@@ -13,6 +13,7 @@ import android.view.View;
 
 import androidx.navigation.NavController;
 import androidx.navigation.Navigation;
+import androidx.navigation.fragment.NavHostFragment;
 import androidx.navigation.ui.AppBarConfiguration;
 import androidx.navigation.ui.NavigationUI;
 import com.example.myapplication.databinding.ActivityMainBinding;
@@ -60,9 +61,8 @@ private ActivityMainBinding binding;
             }
         });
     }
-@Override
+    @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -77,6 +77,15 @@ private ActivityMainBinding binding;
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             showSettingsDialog(MainActivity.this);
+            return true;
+        } else if (id == R.id.action_monitor_activity) {
+            // Find the NavHostFragment by its ID
+            NavHostFragment navHostFragment = (NavHostFragment) getSupportFragmentManager().findFragmentById(R.id.nav_host_fragment_content_main);
+
+            // Obtain the NavController from the NavHostFragment
+            NavController navController = navHostFragment.getNavController();
+
+            navController.navigate(R.id.itemListFragment);
             return true;
         }
 

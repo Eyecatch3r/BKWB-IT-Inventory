@@ -30,6 +30,6 @@
   android:layout_gravity="bottom|end"
   android:layout_marginEnd="@dimen/fab_margin"
   android:layout_marginBottom="16dp"
-  android:text="Iserv" />
+  android:text="@string/iserv" />
 
   </androidx.coordinatorlayout.widget.CoordinatorLayout>

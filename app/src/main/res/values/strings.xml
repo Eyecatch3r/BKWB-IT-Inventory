@@ -14,5 +14,8 @@
         Suchbegriff
     </string>
     <string name="suchen">Suchen</string>
+    <string name="iserv">Iserv</string>
+    <string name="monitor_activity">Monitor activity</string>
+    <string name="inventory_search">Inventory Search</string>
 
 </resources>

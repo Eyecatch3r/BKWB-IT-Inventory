@@ -43,7 +43,7 @@ public class ResultAdapter extends RecyclerView.Adapter<ResultAdapter.ResultView
     }
 
     static class ResultViewHolder extends RecyclerView.ViewHolder {
-        private TextView textView;
+        private final TextView textView;
 
         public ResultViewHolder(@NonNull View itemView) {
             super(itemView);
